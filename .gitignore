@@ -1,0 +1,34 @@
+
+# dependencies
+/node_modules
+/bower_components
+
+# IDEs and editors
+/.idea
+/.vscode
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+
+runServer.sh
+node_modules/
+.bash_history
+.bash_logout
+.bashrc
+.cache/
+.mongorc.js
+.npm/
+.profile
+.ssh/
+.sudo_as_admin_successful
+.v8flags.*
+.viminfo
+.vim/
+.config/
+apps/home/img/
+apps/views/img/
+ts-node-*/
+npm-debug*
+logs/
