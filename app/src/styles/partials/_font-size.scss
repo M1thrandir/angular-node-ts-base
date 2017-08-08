@@ -2,8 +2,6 @@
     position: relative;
 }
 
-.dmh-button-icon {}
-
 $size-list: 'xs' 'sm' 'md' 'lg' 'lg-2' 'xl' 'xxl' 'xxxl';
 $i: 0;
 @each $size in $size-list {

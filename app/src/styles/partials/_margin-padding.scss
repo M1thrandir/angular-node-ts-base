@@ -6,6 +6,12 @@
     width: #{amtsize}px;
   }
 
+  // Height
+  .height-#{amtsize} {
+    height: #{amtsize}px;
+  }
+
+
   // Positive Paddings
   .padding-#{$amtsize} {
     padding: #{$amtsize}px;
