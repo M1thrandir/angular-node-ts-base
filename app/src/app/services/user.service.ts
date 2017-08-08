@@ -75,7 +75,6 @@ export class UserService {
 
   private loginUrls: Object = {
     "google": Constants.GOOGLE_LOGIN,
-    "foursquare": Constants.FOURSQUARE_LOGIN,
     "facebook": Constants.FACEBOOK_LOGIN,
     "twitter": Constants.TWITTER_LOGIN,
   }
@@ -84,7 +83,7 @@ export class UserService {
    * Sends a login request
    *
    */
-  public login(type: string = "foursquare") {
+  public login(type: string = "google") {
     console.log("Logging in...")
     if (!this.loginUrls[type]) {
       let supportedTypes = Object.keys(this.loginUrls)

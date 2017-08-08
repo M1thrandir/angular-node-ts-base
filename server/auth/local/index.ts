@@ -4,9 +4,9 @@ import * as express from "express"
 import * as passport from "passport"
 import { AuthService } from "../auth.service"
 
-export const LocalApi = express.Router()
+export const LocalPassportRouter = express.Router()
 
-LocalApi.post("/", (req, res, next) => {
+LocalPassportRouter.post("/", (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
     const error = err || info
     if (error) return res.status(401).json(error)

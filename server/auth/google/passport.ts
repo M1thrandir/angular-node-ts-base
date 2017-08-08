@@ -1,5 +1,4 @@
 import * as passport from "passport"
-import * as uuid from "node-uuid"
 import { OAuth2Strategy } from "passport-google-oauth"
 import { Utils } from "../../utils"
 import { UserController } from  "../../api/user/user.controller"

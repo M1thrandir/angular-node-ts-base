@@ -5,9 +5,9 @@ import * as passport from "passport"
 import { AuthService } from "../auth.service"
 import { ServerSettings } from "../../config/server.config"
 
-export const FacebookApi = express.Router()
+export const FacebookPassportRouter = express.Router()
 
-FacebookApi
+FacebookPassportRouter
 .get("/", passport.authenticate("facebook", {
   scope: ["email", "user_about_me"],
   failureRedirect: ServerSettings.appUrl + "#/login?loginMessage=Unable to login with facebook&intendedLogout=false",

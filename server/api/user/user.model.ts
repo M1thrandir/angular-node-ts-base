@@ -3,6 +3,8 @@
 import { Schema, model, Document } from "mongoose"
 import { pbkdf2Sync, randomBytes } from "crypto"
 
+import { IUserModel, ClientUser, IOptionalUser } from "../../../common/user.model"
+
 const authTypes = [
   "github",
   "twitter",
@@ -10,20 +12,7 @@ const authTypes = [
   "google"
 ]
 
-export class IUser extends Document {
-  name: String = ""
-  email: String = ""
-  phone: Number
-  role: string = "user"
-  username: string
-  hashedPassword: string
-  provider: string = "local"
-  salt: string
-  facebook: object = {}
-  twitter: object = {}
-  google:object = {}
-  authenticate?: Function
-}
+export interface IUser extends Document, IUserModel, IOptionalUser {}
 
 let UserSchema: Schema = new Schema({
   name: String,

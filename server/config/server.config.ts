@@ -10,21 +10,14 @@ export class ServerSettings {
   public static domain = "http://localhost"
   public static ip = "127.0.0.1"
   public static appUrl: string = `${ServerSettings.domain}:${ServerSettings.appPort}`
-  public static root = path.normalize(`${__dirname}/../../..`)
+  public static root = path.normalize(`${__dirname}/../..`)
   public static tokenAgeInMinutes = 60*5
 
   public static seedDB: boolean = false
+  public static usePassport: boolean = false
 
   public static secrets = {
     session: "base-secret"
-  }
-
-  public static mongo = {
-    options: {
-      db: {
-        safe: true
-      }
-    }
   }
 
   public static facebook = {

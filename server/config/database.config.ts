@@ -1,4 +1,4 @@
-const databaseName = "impart"
+const databaseName = "node-ts-base"
 const databaseType = "mongodb"
 
 export const DatabaseSettings = {
@@ -9,6 +9,7 @@ export const DatabaseSettings = {
     seed: "localhost/" + databaseName,
     uri: databaseType + "://localhost/" + databaseName,
     options: {
+      useMongoClient: true,
       db: {
         safe: true
       },

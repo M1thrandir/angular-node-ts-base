@@ -10,19 +10,19 @@ import { FacebookPassport } from "./facebook/passport"
 import { GooglePassport } from "./google/passport"
 import { TwitterPassport } from "./twitter/passport"
 
-import { LocalApi } from "./local"
-import { FacebookApi } from "./facebook"
-import { TwitterApi } from "./twitter"
-import { GoogleApi } from "./google"
+import { LocalPassportRouter } from "./local"
+import { FacebookPassportRouter } from "./facebook"
+import { TwitterPassportRouter } from "./twitter"
+import { GooglePassportRouter } from "./google"
 
 LocalPassport.setup(User)
 FacebookPassport.setup(User)
 GooglePassport.setup(User)
 TwitterPassport.setup(User)
 
-export const AuthApi = Router()
+export const AuthRouter = Router()
 
-AuthApi.use("/local", LocalApi)
-AuthApi.use("/facebook", FacebookApi)
-AuthApi.use("/twitter", TwitterApi)
-AuthApi.use("/google", GoogleApi)
+AuthRouter.use("/local", LocalPassportRouter)
+AuthRouter.use("/facebook", FacebookPassportRouter)
+AuthRouter.use("/twitter", TwitterPassportRouter)
+AuthRouter.use("/google", GooglePassportRouter)

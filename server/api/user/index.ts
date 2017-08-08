@@ -4,11 +4,11 @@ import * as https from "https"
 import { Router } from "express"
 import { UserController } from "./user.controller"
 
-export const UserApi = Router()
+export const UserRouter = Router()
 
-UserApi.get("/", UserController.getAll)
-UserApi.get("/:id", UserController.getById)
-UserApi.put("/:id/password", UserController.changePassword)
-UserApi.get("/me", UserController.me)
-UserApi.post("/", UserController.createResource)
-UserApi.delete("/:id", UserController.deleteResource)
+UserRouter.get("/", UserController.getAll)
+UserRouter.get("/:id", UserController.getById)
+UserRouter.put("/:id/password", UserController.changePassword)
+UserRouter.get("/me", UserController.me)
+UserRouter.post("/", UserController.createResource)
+UserRouter.delete("/:id", UserController.deleteResource)

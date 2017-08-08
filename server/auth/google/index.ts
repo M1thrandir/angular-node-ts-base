@@ -5,9 +5,9 @@ import * as passport from "passport"
 import { AuthService } from "../auth.service"
 import { ServerSettings } from "../../config/server.config"
 
-export const GoogleApi = express.Router()
+export const GooglePassportRouter = express.Router()
 
-GoogleApi
+GooglePassportRouter
 .get("/", passport.authenticate("google", {
   failureRedirect: "/signup",
   scope: [

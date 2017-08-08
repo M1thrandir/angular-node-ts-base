@@ -13,10 +13,10 @@ import {DomSanitizer} from "@angular/platform-browser"
 export class AppComponent {
   constructor(public router: Router, private userService: UserService,
               private iconRegistry: MdIconRegistry, private domSanitize: DomSanitizer) {
-    iconRegistry.addSvgIcon("impart", domSanitize.bypassSecurityTrustResourceUrl("assets/img/impart.svg"))
+    // iconRegistry.addSvgIcon("impart", domSanitize.bypassSecurityTrustResourceUrl("assets/img/impart.svg"))
   }
 
-  public brand: Link = new Link("Impart", "impart", null, "/", {})
+  public brand: Link = new Link("Node & Angular Base", "check", null, "/", {})
 
   public bottomHeading: string = "Account"
   public bottomLinks: Link[] = [

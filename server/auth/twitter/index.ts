@@ -4,9 +4,9 @@ import * as express from "express"
 import * as passport from "passport"
 import { AuthService } from "../auth.service"
 
-export const TwitterApi = express.Router()
+export const TwitterPassportRouter = express.Router()
 
-TwitterApi
+TwitterPassportRouter
 .get("/", passport.authenticate("twitter", {
   failureRedirect: "/signup",
   session: false
