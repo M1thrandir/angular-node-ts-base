@@ -28,12 +28,12 @@
     </md-list>
   </md-sidenav>
   <md-toolbar color="primary">
-    <a *ngIf="brand.internalLink" class="navbar-brand white col-lg-12" [routerLink]="[brand.internalLink]"
+    <a *ngIf="brand.internalLink" class="navbar-brand white" [routerLink]="[brand.internalLink]"
        [routerLinkActive]="['active']">
-      <icon [name]="brand.iconPath" class="brand-icon" size="md"></icon>
-      <p class="float-left">
+      <i class="brand-icon {{ brand.iconPath }}"></i>
+      <span>
         {{brand.name}}
-      </p>
+      </span>
     </a>
     <a *ngIf="!brand.internalLink" class="navbar-brand white" [href]="brand.externalLink">
       {{brand.name}}

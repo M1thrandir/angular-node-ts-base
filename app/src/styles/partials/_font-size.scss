@@ -1,5 +1,5 @@
 .icon {
-    position: relative;
+  position: relative;
 }
 
 $size-list: 'xs' 'sm' 'md' 'lg' 'lg-2' 'xl' 'xxl' 'xxxl';
@@ -13,8 +13,8 @@ $i: 0;
 
   $length: 25 + $i * 5;
   .dmh-button-#{$size} {
-    height: #{$length}px !important;
-    width: #{$length}px !important;
+    height: #{$length}px;
+    width: #{$length}px;
   }
 
   $line-height: 0 + ($i + 1) * 5;

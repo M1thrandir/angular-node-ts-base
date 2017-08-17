@@ -1,15 +1,14 @@
-const databaseName = "node-ts-base"
+const databaseName = "nodeTsBase"
 const databaseType = "mongodb"
 
 export const DatabaseSettings = {
   useMongo: true,
-  seedMongo: false,
+  seedMongo: true,
   databaseName: databaseName,
   db: {
     seed: "localhost/" + databaseName,
     uri: databaseType + "://localhost/" + databaseName,
     options: {
-      useMongoClient: true,
       db: {
         safe: true
       },

@@ -4,78 +4,20 @@
 
 @import "~mdi/css/materialdesignicons.min.css";
 
-a, .clickable {
+a {
   cursor: pointer;
+  text-decoration: none;
 }
 
-.fill {
-  // This fills the remaining space, by using flexbox.
-  // Every toolbar row uses a flexbox row layout.
-  flex: 1 1 auto;
+.mdi-30px:before {
+  font-size: 30px;
 }
 
-.app-container {
-  margin-right: 25px;
-  margin-left: 25px;
-  padding-left: 15px;
-  padding-right: 15px;
+.mdi-36px:before {
+  font-size: 36px;
 }
 
 .full-height {
   height: 100vh;
 }
 
-a,
-.clickable {
-  cursor: pointer;
-}
-
-.equal-panel-heights.col-lg-12.col-md-12.col-sm-12 {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.equal-panel-heights {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex: 1 1 auto;
-}
-
-.center-vertical {
-  display: table;
-}
-
-.center-vertical h1,
-.center-vertical h2,
-.center-vertical h3,
-.center-vertical h4,
-.center-vertical h5,
-.center-vertical p {
-  vertical-align: middle;
-}
-
-.center-all {
-  display: table;
-  justify-content: center;
-  align-items: center;
-}
-
-.vcenter {
-  display: flex;
-  align-items: center;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.float-left {
-  float: left;
-}
-
-.float-right {
-  float: right;
-}

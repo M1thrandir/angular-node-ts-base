@@ -88,7 +88,6 @@ export abstract class BaseServer {
     if (DatabaseSettings.useMongo) {
       let mongoManager = new MongoManager(`${__dirname}/seeds`)
       mongoManager.initAndConnectToMongo()
-      // if(ServerSettings.seedDB) { require("./config/seed") }
     }
 
     const options = {

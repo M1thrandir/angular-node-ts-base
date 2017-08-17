@@ -3,6 +3,10 @@
 :host {
   z-index: 999;
 
+  .fill {
+    flex: 1 1 auto;
+  }
+
   a {
     color: white;
     line-height: 28px;
@@ -11,31 +15,17 @@
       color: #d9edf7;
     }
 
-    md-icon, icon {
-      margin-top: -3px;
+    md-icon, i {
       font-size: 1em;
 
       &.brand-icon {
-        float: left;
         margin-right: 15px;
-
-        /deep/ .svg-icon {
-          height: 45px;
-          width: 45px;
-          top: -10px;
-          position: relative;
-        }
       }
-    }
-
-    p {
-      float: left;
-      margin-top: -3px;
     }
 
     .nav-link .active {
       background-color: rgba(255, 255, 255, 0.75);
-      color: black !important;
+      color: black;
     }
 
     .nav-link {
@@ -52,8 +42,7 @@
     }
 
     &.navbar-brand {
-      height: 60px !important;
-      margin-top: 5px;
+      padding: 20px 0;
     }
   }
 

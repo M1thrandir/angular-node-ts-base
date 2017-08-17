@@ -4,17 +4,15 @@
   </md-card>
   <md-card *ngIf="loading && !loginMessage" class="md-accent">Checking login credentials...</md-card>
   <div *ngIf="!loading">
-    <md-card class="no-margin-bottom">
-      <md-card-title class="text-center">Login</md-card-title>
+    <md-card>
+      <md-card-title>Login</md-card-title>
       <icon name="impart" size="xxl" class="impart-logo"></icon>
     </md-card>
-    <md-card class="no-margin-bottom col-lg-12">
-      <div class="col-lg-4">
-        <dmh-button-icon (click)="loginWith('google')"
-                         name="fa-google" size="xl">
-          <span class="padding-left-10">Login with Google</span>
-        </dmh-button-icon>
-      </div>
+    <md-card>
+      <button md-raised-button>
+        <i class="mdi mdi-google mdi-24px"></i>
+        <span>Login with Google</span>
+      </button>
     </md-card>
   </div>
 </div>

@@ -16,7 +16,7 @@ export class AppComponent {
     // iconRegistry.addSvgIcon("impart", domSanitize.bypassSecurityTrustResourceUrl("assets/img/impart.svg"))
   }
 
-  public brand: Link = new Link("Node & Angular Base", "check", null, "/", {})
+  public brand: Link = new Link("Node & Angular Base", "mdi mdi-check mdi-30px", null, "/", {})
 
   public bottomHeading: string = "Account"
   public bottomLinks: Link[] = [

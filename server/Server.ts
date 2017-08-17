@@ -29,12 +29,13 @@ import { DatabaseSettings } from "./config/database.config"
 import { MongoManager } from "./MongoManager"
 import { ServerSettings } from "./config/server.config"
 import { UserRouter } from "./api/user"
+import { SubjectRouter } from "./api/subject"
 import { AuthRouter } from "./auth"
 import { BaseServer } from "./BaseServer"
 
 export class Server extends BaseServer {
   constructor() {
-    super(null, 3008)
+    super(3008)
   }
 
   public initRoutes(): void {
@@ -46,6 +47,7 @@ export class Server extends BaseServer {
     this.app.use(favicon(path.join(ServerSettings.root, "app", "src", "favicon.ico")))
 
     this.app.use("/api/users", UserRouter)
+    this.app.use("/api/subjects", SubjectRouter)
     this.app.use("/auth", AuthRouter)
 
     this.app.route("/:url(node_modules|assets|server|src)/*")

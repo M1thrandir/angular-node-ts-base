@@ -19,7 +19,7 @@ export class HttpRequest {
     })
   }
 
-  public static get(url: string, headers?: { [key: string]: string }) {
+  public static get(url: string, headers?: { [key: string]: string }): Q.Promise<{ status: number, data: any, response: any }> {
     return Q.Promise((resolve, reject) => {
       if (!url) {
         console.error("You must provide a url for the get request")
@@ -32,8 +32,10 @@ export class HttpRequest {
         headers: HttpRequest.getHeaders(headers),
         rejectUnauthorized: false
       }, (error, response, body) => {
-        if (error) return reject(error)
-        return resolve({status: response.status, data: body, response: response})
+        if (error) {
+          return reject(error)
+        }
+        return resolve({status: response.status ? response.status : 200, data: body, response: response})
       })
     })
   }
