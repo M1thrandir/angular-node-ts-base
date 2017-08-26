@@ -26,7 +26,7 @@ const mongoStore = connectMongo(session)
 
 // Your own modules
 import { DatabaseSettings } from "./config/database.config"
-import { MongoManager } from "./MongoManager"
+import { MongoManager } from "./mongo-manager"
 import { ServerSettings } from "./config/server.config"
 import { UserRouter } from "./api/user"
 import { AuthRouter } from "./auth"

@@ -26,12 +26,12 @@ const mongoStore = connectMongo(session)
 
 // Your own modules
 import { DatabaseSettings } from "./config/database.config"
-import { MongoManager } from "./MongoManager"
+import { MongoManager } from "./mongo-manager"
 import { ServerSettings } from "./config/server.config"
 import { UserRouter } from "./api/user"
 import { SubjectRouter } from "./api/subject"
 import { AuthRouter } from "./auth"
-import { BaseServer } from "./BaseServer"
+import { BaseServer } from "./base-server"
 
 export class Server extends BaseServer {
   constructor() {

@@ -1,8 +1,3 @@
-
-export interface ClientUser extends User {
-  _id?: string
-}
-
 export interface IProfileUser {
   name: string
   role: string
@@ -26,10 +21,13 @@ export interface IUserModel extends IProfileUser {
   google:object
 }
 
-
 export interface IOptionalUser {
   password?: string
   profile?: { name: string, role: string },
   token?: { _id: string, role: string },
   authenticate?: Function
+}
+
+export interface ClientUser extends IUserModel, IOptionalUser {
+  _id?: string
 }

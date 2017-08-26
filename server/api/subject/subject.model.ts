@@ -18,4 +18,4 @@ const SubjectSchema: Schema = new Schema({
   children: [Object],
 })
 
-export const Subject = model<ISubject>("Subject", SubjectSchema)
+export const Subject = model<ISubjectDocument>("Subject", SubjectSchema)
