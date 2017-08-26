@@ -15,7 +15,7 @@
       { "name": "xdescribe", "message": "Do not skip tests" },
       { "name": "fdescribe", "message": "Do not skip tests" },
       { "name": "xit", "message": "Do not skip tests" },
-      { "name": "fit", "message": "Do not skip tests" },
+      { "name": "fit", "message": "Do not skip tests" }
     ],
     "deprecation": true,
     "match-default-export-name": true,

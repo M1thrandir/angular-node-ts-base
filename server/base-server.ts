@@ -1,4 +1,3 @@
-/// <reference path="typings.d.ts" />
 "use strict"
 
 // Libraries
@@ -127,8 +126,7 @@ export abstract class BaseServer {
       resave: true,
       saveUninitialized: true,
       store: new mongoStore({
-        mongooseConnection: connection,
-        db: "node-ts-node"
+        mongooseConnection: connection
       })
     }))
   }

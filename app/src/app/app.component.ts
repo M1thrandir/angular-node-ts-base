@@ -1,9 +1,9 @@
 import { Component, Input } from "@angular/core"
-import {Router} from "@angular/router"
-import { Link } from "./models/Link"
-import {UserService} from "./services"
-import {MdIconRegistry} from "@angular/material"
-import {DomSanitizer} from "@angular/platform-browser"
+import { Router } from "@angular/router"
+import { Link } from "./navbar/navbar.model"
+import { UserService } from "./services"
+import { MdIconRegistry } from "@angular/material"
+import { DomSanitizer } from "@angular/platform-browser"
 
 @Component({
   selector: "app-root",
@@ -20,19 +20,19 @@ export class AppComponent {
 
   public bottomHeading: string = "Account"
   public bottomLinks: Link[] = [
-    new Link("Login", "fa-sign-in", null, "/login", {}, this.notLoggedIn, this.userService),
-    new Link("Logout", "fa-sign-out", null, "/logout", {}, this.isLoggedIn, this.userService),
+    new Link("Login", "fa-sign-in", null, "/login", {}, this.notLoggedIn.bind(this)),
+    new Link("Logout", "fa-sign-out", null, "/logout", {}, this.isLoggedIn.bind(this)),
   ]
 
   public topLinks: Link[] = [
-    new Link("My Account", "fa-user", null, "/account", {}, this.isLoggedIn, this.userService),
+    new Link("My Account", "fa-user", null, "/account", {}, this.isLoggedIn.bind(this)),
   ]
 
-  isLoggedIn(userService: UserService) {
-    return userService.isAuthenticated()
+  isLoggedIn(): boolean {
+    return this.userService.isAuthenticated()
   }
 
-  notLoggedIn(userService: UserService) {
-    return !userService.isAuthenticated()
+  notLoggedIn(): boolean {
+    return !this.userService.isAuthenticated()
   }
 }

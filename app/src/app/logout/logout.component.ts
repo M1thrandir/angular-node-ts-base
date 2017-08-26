@@ -1,8 +1,8 @@
-import {Component, OnInit} from "@angular/core"
-import {UserService} from "../services/user.service"
+import { Component, OnInit } from "@angular/core"
+import { UserService } from "../services/user.service"
 
 @Component({
-  selector: `logout`,
+  selector: `u-dh-logout`,
   templateUrl: "./logout.component.html",
   styleUrls: ["./logout.component.scss"]
 })

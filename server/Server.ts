@@ -1,4 +1,3 @@
-/// <reference path="typings.d.ts" />
 "use strict"
 
 // Libraries
@@ -51,8 +50,8 @@ export class Server extends BaseServer {
     this.app.use("/auth", AuthRouter)
 
     this.app.route("/:url(node_modules|assets|server|src)/*")
-    .get(Server.PageNotFound404)
+            .get(BaseServer.PageNotFound404)
   }
 }
 
-exports = new Server().app
+new Server()

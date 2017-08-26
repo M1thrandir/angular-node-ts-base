@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core"
-import {User} from "../models/User"
-import {Constants} from "../models/Constants"
-import {Router} from "@angular/router"
-import {Observable, BehaviorSubject} from "rxjs"
-import {Http, Response} from "@angular/http"
+import { User } from "../models/user.model"
+import { Constants} from "../models/constants"
+import { Router} from "@angular/router"
+import { Observable, BehaviorSubject } from "rxjs"
+import { Http, Response } from "@angular/http"
 
 @Injectable()
 export class UserService {
@@ -73,7 +73,7 @@ export class UserService {
     return curTime > expiryTime
   }
 
-  private loginUrls: Object = {
+  private loginUrls: { [type: string]: string} = {
     "google": Constants.GOOGLE_LOGIN,
     "facebook": Constants.FACEBOOK_LOGIN,
     "twitter": Constants.TWITTER_LOGIN,

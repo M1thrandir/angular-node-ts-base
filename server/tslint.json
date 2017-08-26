@@ -1,22 +1,14 @@
 {
-  "extends": [ "codelyzer", "tslint:recommended" ],
+  "extends": [ "tslint:recommended" ],
   "rulesDirectory": [
     "node_modules/tslint-microsoft-contrib",
-    "node_modules/tslint-eslint-rules/dist/rules",
-    "node_modules/codelyzer"
+    "node_modules/tslint-eslint-rules/dist/rules"
   ],
   "defaultSeverity": "warning",
   "rules": {
     "align": [true, "parameters"],
     "await-promise": true,
     "arrow-parens": [true, "ban-single-arg-parens"],
-    "ban": [
-      true,
-      { "name": "xdescribe", "message": "Do not skip tests" },
-      { "name": "fdescribe", "message": "Do not skip tests" },
-      { "name": "xit", "message": "Do not skip tests" },
-      { "name": "fit", "message": "Do not skip tests" },
-    ],
     "deprecation": true,
     "match-default-export-name": true,
     "no-boolean-literal-compare": true,

@@ -1,13 +1,13 @@
-import {Component, ViewChild, Input} from "@angular/core"
-import {Link} from "../models/Link"
+import { Component, ViewChild, Input } from "@angular/core"
+import { Link } from "./navbar.model"
 
 @Component({
-  selector: "app-navbar",
+  selector: "u-dh-navbar",
   templateUrl: "./navbar.component.html",
   styleUrls: ["./navbar.component.scss"]
 })
 export class NavbarComponent {
-  @ViewChild("menuRight") menu: any
+  @ViewChild("menuLeft") menu: any
   @Input() brand: Link
   @Input() topHeading: string
   @Input() topLinks: Link[]

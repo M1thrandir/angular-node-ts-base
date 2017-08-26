@@ -3,7 +3,7 @@
 import { Schema, model, Document } from "mongoose"
 import { pbkdf2Sync, randomBytes } from "crypto"
 
-import { IUserModel, ClientUser, IOptionalUser } from "../../../common/user.model"
+import { IUserModel, ClientUser, IOptionalUser } from "../../user.model"
 
 const authTypes = [
   "github",

@@ -1,19 +1,17 @@
-import {Component, OnInit} from "@angular/core"
+import { Component, OnInit } from "@angular/core"
 import { UserService } from "../services"
-import { User } from "../models/User"
-import {ActivatedRoute, Router} from "@angular/router"
+import { User } from "../models/user.model"
+import { ActivatedRoute, Router } from "@angular/router"
 import { Observable } from "rxjs/Rx"
-import { LoginAnimations } from "./login.animation"
-import { Constants } from "../models/Constants"
+import { Constants } from "../models/constants"
 
 @Component({
-  selector: `login`,
+  selector: `u-dh-login`,
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.scss"],
-  animations: LoginAnimations
 })
 export class LoginComponent implements OnInit {
-  model: User = new User("")
+  model: User = new User()
   loading: boolean = false
   success: boolean = false
   loginMessage: string = ""
@@ -60,8 +58,7 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  public getExpiration(token_age) {
-    // return Math.floor(new Date().getTime() / 1000) + Number(token_age)
+  public getExpiration(token_age: string | number) {
     return Number(token_age)
   }
 

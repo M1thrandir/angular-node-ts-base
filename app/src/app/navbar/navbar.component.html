@@ -1,5 +1,5 @@
 <md-sidenav-container class="full-height">
-  <md-sidenav #menuRight align="end" mode="push">
+  <md-sidenav #menuLeft align="start" mode="push">
     <md-list>
       <h2 md-subheader *ngIf="!topHeading">{{ brand.name }}</h2>
       <h3 md-subheader *ngIf="topHeading && topLinks && topLinks.length > 0">
@@ -7,9 +7,9 @@
       </h3>
       <div *ngFor="let link of topLinks">
         <md-list-item *ngIf="!link.show || link.show(link.showParam)"
-                      (click)="menuRight.close()"
+                      (click)="menuLeft.close()"
                       [routerLink]="link.internalLink">
-          <icon md-list-avatar [name]="link.iconPath" size="lg"></icon>
+          <i md-list-avatar [class]="'mdi-24px ' + link.iconPath"></i>
           <h4 md-line>{{link.name}}</h4>
         </md-list-item>
       </div>
@@ -19,9 +19,9 @@
       </h3>
       <div *ngFor="let link of bottomLinks">
         <md-list-item *ngIf="!link.show || link.show(link.showParam)"
-                      (click)="menuRight.close()"
+                      (click)="menuLeft.close()"
                       [routerLink]="link.internalLink">
-          <icon md-list-avatar [name]="link.iconPath" size="lg"></icon>
+          <i md-list-avatar [class]="'mdi-24px ' + link.iconPath"></i>
           <h4 md-line>{{link.name}}</h4>
         </md-list-item>
       </div>
