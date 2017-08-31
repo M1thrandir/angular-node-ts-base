@@ -1,0 +1,52 @@
+@import "../../styles/app.variables";
+
+:host {
+  height: 100%;
+  width: 100%;
+
+  /deep/ {
+    .mat-sidenav-container {
+      height: 100%;
+
+      .brand-container,
+      .mat-toolbar {
+        z-index: 5;
+        position: inherit;
+        height: 56px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .mat-sidenav-content {
+        &::-webkit-scrollbar {
+          background: transparent;
+          width: 8px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: #bdbdbd;
+        }
+
+        .sidenav-container {
+          position: absolute;
+          display: flex;
+          top: 56px + 8px;
+          height: calc(100% - 56px - 8px);
+          width: 240px;
+          z-index: 5;
+        }
+      }
+
+      .body-container {
+        margin: 0 240px;
+        padding: 0 25px;
+        height: 100%;
+      }
+    }
+  }
+
+  .fill {
+    flex: 1 1 auto;
+    align-items: center;
+  }
+}

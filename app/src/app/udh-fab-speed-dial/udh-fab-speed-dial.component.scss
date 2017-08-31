@@ -1,0 +1,57 @@
+@mixin speedDialAnimations($margin, $margin-container, $margin-duration, $opacity, $opacity-duration, $opacity-delay) {
+   /deep/ {
+    // .udh-fab-trigger-container {
+    //   [udh-fab-trigger] {
+    //   }
+    // }
+
+    .udh-fab-actions-container {
+      margin: $margin-container;
+      opacity: $opacity;
+
+      transition: margin $margin-duration, opacity $opacity-duration $opacity-delay;
+
+      udh-fab-actions {
+        button {
+          margin: $margin;
+          transition: margin $margin-duration;
+        }
+      }
+    }
+  }
+}
+
+:host {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 56px;
+  min-height: 56px;
+
+  @include speedDialAnimations(-20px, -32px, 300ms, 0, 10ms, 290ms);
+
+  /deep/ {
+    .udh-fab-trigger-container {
+      z-index: 2;
+
+      button i {
+        line-height: 56px;
+        font-size: 30px;
+      }
+    }
+
+    .udh-fab-actions-container {
+      z-index: 1;
+
+      button i {
+        line-height: 40px;
+        font-size: 24px;
+      }
+    }
+  }
+  
+  &.opened {
+    @include speedDialAnimations(5px, 5px, 300ms, 1, 290ms, 10ms);
+  }
+}

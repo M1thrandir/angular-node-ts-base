@@ -1,0 +1,11 @@
+<button md-mini-fab [color]="color" *ngIf="size === 'sm'">
+  <i [class]="icon"></i>
+</button>
+
+<button md-fab [color]="color" *ngIf="size === 'lg'">
+  <i [class]="icon"></i>
+</button>
+
+<div class="speed-dial-title">
+  <ng-content></ng-content>
+</div>

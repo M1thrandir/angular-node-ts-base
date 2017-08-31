@@ -1,6 +1,6 @@
-@import 'partials/margin-padding';
-@import 'partials/font-size';
-@import 'app.theme';
+@import "partials/margin-padding";
+@import "partials/font-size";
+@import "app.theme";
 
 @import "~mdi/css/materialdesignicons.min.css";
 
@@ -17,7 +17,9 @@ a {
   font-size: 36px;
 }
 
-.full-height {
+body {
+  margin: 0;
   height: 100vh;
+  width: 100vw;
+  font-family: Roboto;
 }
-

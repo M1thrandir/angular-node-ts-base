@@ -1,0 +1,45 @@
+:host {
+  .link-group {
+    .divider {
+      padding: 12px 0 0 24px;
+      margin: 0;
+      border-top-color: #e1e1e1;
+      border-top-width: 2px;
+      border-top-style: solid;
+      display: flex;
+      align-items: center;
+      height: 24px;
+
+      h3 {
+        font-weight: 500;
+        font-size: 14px;
+        color: #8e8e8e;
+      }
+    }
+
+    /deep/ {
+      udh-icon-link {
+        padding: 5px;
+        margin: 5px;
+        border-radius: 1px;
+        
+
+        &.active {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+        &:hover:not(.active) {
+          background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .brand-name {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}

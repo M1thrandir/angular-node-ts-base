@@ -2,7 +2,7 @@
   position: relative;
 }
 
-$size-list: 'xs' 'sm' 'md' 'lg' 'lg-2' 'xl' 'xxl' 'xxxl';
+$size-list: "xs" "sm" "md" "lg" "lg-2" "xl" "xxl" "xxxl";
 $i: 0;
 @each $size in $size-list {
   $amt-size: 0.75 + $i * 0.25;

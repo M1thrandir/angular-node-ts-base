@@ -1,0 +1,41 @@
+<md-card class="header">
+  Header
+
+  <div class="speed-dial-wrapper">
+    <udh-fab-speed-dial direction="left">
+      <button md-fab udh-fab-trigger color="accent" mdTooltip="Add Task" mdTooltipPosition="above">
+      <i class="mdi mdi-plus"></i>
+    </button>
+
+      <udh-fab-actions>
+        <button md-mini-fab color="primary" mdTooltip="Add Routine" mdTooltipPosition="above">
+        <i class="mdi mdi-check"></i>
+      </button>
+        <button md-mini-fab color="primary" mdTooltip="Add Routine" mdTooltipPosition="above">
+        <i class="mdi mdi-calendar"></i>
+      </button>
+        <button md-mini-fab color="primary" mdTooltip="Add Routine" mdTooltipPosition="above">
+        <i class="mdi mdi-login"></i>
+      </button>
+        <button md-mini-fab color="primary" mdTooltip="Add Routine" mdTooltipPosition="above">
+        <i class="mdi mdi-login"></i>
+      </button>
+        <button md-mini-fab color="primary" mdTooltip="Add Routine" mdTooltipPosition="above">
+        <i class="mdi mdi-login"></i>
+      </button>
+        <button md-mini-fab color="primary" mdTooltip="Add Routine" mdTooltipPosition="above">
+        <i class="mdi mdi-login"></i>
+      </button>
+        <button md-mini-fab color="primary" mdTooltip="Add Routine" mdTooltipPosition="above">
+        <i class="mdi mdi-login"></i>
+      </button>
+      </udh-fab-actions>
+
+    </udh-fab-speed-dial>
+  </div>
+</md-card>
+<div style="background-color: lightblue; padding: 5px;">
+<md-card *ngFor="let item of [1,2,3,4,5,6,7,8,9,10]" style="margin: 0 5px 5px;">
+  Routine #{{ item }}
+</md-card>
+</div>

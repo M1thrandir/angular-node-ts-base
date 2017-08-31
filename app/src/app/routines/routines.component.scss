@@ -1,0 +1,28 @@
+@import "../../styles/app.variables";
+
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+
+  .header {
+    background-color: mat-color($primary, 300);
+    color: white;
+
+    .speed-dial-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      align-content: flex-end;
+      bottom: -15px;
+      position: relative;
+      float: right;
+      width: 56px;
+      height: 56px;
+
+      udh-fab-speed-dial {
+        width: 56px;
+        height: 56px;
+      }
+    }
+  }
+}

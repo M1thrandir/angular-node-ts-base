@@ -1,0 +1,24 @@
+<md-sidenav-container>
+  <!-- Navigation Slide out -->
+  <div class="sidenav-container">
+    <ng-content select="udh-navigation"></ng-content>
+  </div>
+
+  <!-- Header Toolbar -->
+  <md-toolbar color="primary" class="toolbar">
+    <div class="brand-container" (click)="toggleMenu($event)">
+      <ng-content select="udh-icon-link"></ng-content>
+    </div>
+
+    <span class="fill"></span>
+
+    <div class="navbar-icons-container">
+      <ng-content select="udh-navbar-icons"></ng-content>
+    </div>
+  </md-toolbar>
+
+  <!-- Body Content -->
+  <div class="body-container">
+    <ng-content></ng-content>
+  </div>
+</md-sidenav-container>

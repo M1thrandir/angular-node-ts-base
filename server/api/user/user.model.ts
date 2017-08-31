@@ -20,7 +20,7 @@ let UserSchema: Schema = new Schema({
   phone: Number,
   role: {
     type: String,
-    default: 'user'
+    default: "user"
   },
   username: String,
   hashedPassword: String,

@@ -1,0 +1,11 @@
+:host {
+  /deep/ {
+      udh-icon-link {
+        font-size: 24px;
+
+        > a {
+          padding-left: 10px;
+        }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+:host {
+  width: 100%;
+
+  /deep/ {
+    > .mat-sidenav {
+      box-shadow: none !important;
+      background-color: transparent;
+      width: 100%;
+      overflow-x: hidden;
+      overflow-y: hidden;
+
+      &:hover {
+        overflow-y: auto;
+      }
+
+      &::-webkit-scrollbar {
+        background: transparent;
+        width: 8px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #bdbdbd;
+      }
+    }
+
+    .mat-sidenav-backdrop {
+      display: none;
+    }
+  }
+}
