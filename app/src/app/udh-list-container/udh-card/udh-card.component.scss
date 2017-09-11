@@ -1,0 +1,22 @@
+@import "../../../styles/app.variables";
+
+:host {
+  &.selected {
+    /deep/ {
+      .mat-card {
+        background-color: mat-color($primary, 800);
+        color: white;
+        left: 10px;
+        margin: 10px 10px;
+      }
+    }
+  }
+
+  /deep/ {
+    .mat-card {
+      margin: 10px 10px;
+      left: 0px;
+      transition: margin 300ms, left 300ms, height 300ms, font-size 300ms;
+    }
+  }
+}

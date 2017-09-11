@@ -1,30 +1,35 @@
-<md-card class="header">
-  <button md-icon-button (click)="onButtonClick.emit($event)">
+<div class="udh-list-container">
+  <md-card class="header">
+    <button md-icon-button (click)="onButtonClick.emit($event)" class="list-menu">
     <i class="mdi mdi-dots-vertical"></i>
   </button>
-  <udh-input-container class="header-text">
-    <input udh-input placeholder="Add Routine Name..." [(ngModel)]="headerText" name="title" />
-  </udh-input-container>
+    <udh-input-container class="header-text">
+      <input udh-input placeholder="Add Routine Name..." [(ngModel)]="headerText" name="title" />
+    </udh-input-container>
 
-  <div class="speed-dial-wrapper">
-    <udh-fab-speed-dial direction="left">
+    <div class="speed-dial-wrapper" *ngIf="!curCardSelected">
+      <udh-fab-speed-dial direction="left">
 
-      <button udh-fab-trigger md-fab color="accent" mdTooltip="Add Task" mdTooltipPosition="above">
+        <button udh-fab-trigger md-fab color="accent" mdTooltip="Add Task" mdTooltipPosition="above">
         <i class="mdi mdi-plus"></i>
       </button>
 
-      <udh-fab-actions>
-        <button md-mini-fab color="primary" mdTooltip="Play Music" mdTooltipPosition="above">
+        <udh-fab-actions>
+          <button md-mini-fab color="primary" mdTooltip="Play Music" mdTooltipPosition="above">
           <i class="mdi mdi-music-note"></i>
         </button>
 
-        <button md-mini-fab color="primary" mdTooltip="Read Scriptures" mdTooltipPosition="above">
+          <button md-mini-fab color="primary" mdTooltip="Read Scriptures" mdTooltipPosition="above">
           <i class="mdi mdi-book"></i>
         </button>
-      </udh-fab-actions>
-    </udh-fab-speed-dial>
-  </div>
-</md-card>
-<md-card class="body">
-  <ng-content select="md-card, udh-card, udh-card-details"></ng-content>
-</md-card>
+        </udh-fab-actions>
+      </udh-fab-speed-dial>
+    </div>
+  </md-card>
+  <md-card class="body">
+    <ng-content select="udh-card"></ng-content>
+  </md-card>
+</div>
+<div class="udh-card-details-container">
+  <udh-card-details [headerText]="getCurCardTitle()"></udh-card-details>
+</div>

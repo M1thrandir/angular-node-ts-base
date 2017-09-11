@@ -1,82 +1,119 @@
 @import "../../styles/app.variables";
 
-:host(.show) {
-  .header {
-    .speed-dial-wrapper {
-      visibility: visible
+:host(.show-speed-dial) {
+  .udh-list-container {
+    .header {
+      .speed-dial-wrapper {
+        visibility: visible
+      }
     }
   }
 }
 
 :host {
   display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
+  flex-direction: row;
+  overflow: hidden;
+  width: 480px;
+  transition: width 300ms 300ms;
 
-  .header,
-  .body {
-    background-color: mat-color($mat-grey, 100);
-    color: mat-color($mat-grey, 600);
+  &.show-card-details {
+    width: 960px;
+    transition: width 300ms;
+      
+    .udh-card-details-container {
+      width: 480px;
+      opacity: 1;
+      transition: height 300ms 300ms, width 300ms, opacity 250ms 50ms;
+      
+      /deep/ udh-card-details > .body {
+        height: 100%;
+        transition: height 300ms 300ms;
+      }
+    }
+
+    .udh-list-container {
+      width: 480px;
+    }
   }
 
-  .header {
+  .udh-card-details-container {
+    width: 0px;
+    opacity: 0;
+    transition: width 300ms 300ms, opacity 100ms calc(200ms + 300ms);
+    
+    /deep/ udh-card-details > .body {
+      height: 0%;
+      transition: height 300ms;
+    }
+  }
+
+  .udh-list-container {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 480px;
 
-    border-radius: 2px 2px 0 0;
-    height: 20px;
-    border-bottom: 1px solid #dedede;
-
-    .mat-icon-button {
-      font-size: 24px;
+    .header,
+    .body {
+      background-color: mat-color($mat-grey, 100);
+      color: mat-color($mat-grey, 600);
     }
 
-    .header-text {
-      font-size: 24px;
-      padding-left: 10px;
-    }
+    .header {
+      display: flex;
+      align-items: center;
 
-    .speed-dial-wrapper {
-      visibility: hidden;
-      position: absolute;
-      right: 20px;
-      bottom: -25px;
-      width: 56px;
-      height: 56px;
+      border-radius: 2px 2px 0 0;
+      height: 20px;
+      border-bottom: 1px solid #dedede;
 
-      udh-fab-speed-dial {
+      .mat-icon-button {
+        font-size: 24px;
+      }
+
+      .header-text {
+        font-size: 24px;
+        padding-left: 10px;
+      }
+
+      .speed-dial-wrapper {
+        visibility: hidden;
+        position: absolute;
+        right: 20px;
+        bottom: -25px;
         width: 56px;
         height: 56px;
-      }
-    }
-  }
 
-  .body {
-    max-height: 100%;
-    padding: 10px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    @include scrollbar-styling();
-
-
-    &.mat-card {
-      border-radius: 0 0 2px 2px;
-
-      /deep/ .mat-card {
-        margin: 10px 0;
+        udh-fab-speed-dial {
+          width: 56px;
+          height: 56px;
+        }
       }
     }
 
-    /deep/ {
-      .udh-input-container {
-        input[udh-input] {
-          &.udh-item-input-description {
-            border-style: none;
+    .body {
+      max-height: 100%;
+      padding: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      @include scrollbar-styling();
 
-            & + .udh-input-selection {
-              height: 0;
-              border-bottom: 1px solid mat-color($accent);
+
+      &.mat-card {
+        border-radius: 0 0 2px 2px;
+      }
+
+      /deep/ {
+        .udh-input-container {
+          input[udh-input] {
+            &.udh-item-input-description {
+              border-style: none;
+
+              & + .udh-input-selection {
+                height: 0;
+                border-bottom: 1px solid mat-color($accent);
+              }
             }
           }
         }

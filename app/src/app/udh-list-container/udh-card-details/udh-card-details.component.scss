@@ -1,0 +1,82 @@
+@import "../../../styles/app.variables";
+
+:host(.show) {
+  .header {
+    .speed-dial-wrapper {
+      visibility: visible
+    }
+  }
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  .header,
+  .body {
+    background-color: mat-color($mat-grey, 100);
+    color: mat-color($mat-grey, 600);
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+
+    border-radius: 2px 2px 0 0;
+    height: 20px;
+    border-bottom: 1px solid #dedede;
+
+    .mat-icon-button {
+      font-size: 24px;
+    }
+
+    .header-text {
+      font-size: 24px;
+      padding-left: 10px;
+    }
+
+    .speed-dial-wrapper {
+      visibility: hidden;
+      position: absolute;
+      right: 20px;
+      bottom: -25px;
+      width: 56px;
+      height: 56px;
+
+      udh-fab-speed-dial {
+        width: 56px;
+        height: 56px;
+      }
+    }
+  }
+
+  .body {
+    max-height: 100%;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    @include scrollbar-styling();
+
+
+    &.mat-card {
+      border-radius: 0 0 2px 2px;
+    }
+
+    /deep/ {
+      .udh-input-container {
+        input[udh-input] {
+          &.udh-item-input-description {
+            border-style: none;
+
+            & + .udh-input-selection {
+              height: 0;
+              border-bottom: 1px solid mat-color($accent);
+            }
+          }
+        }
+      }
+    }
+  }
+}
