@@ -5,3 +5,20 @@ $accent:  mat-palette($mat-pink, 700, 300, 900);
 $warn: mat-palette($mat-red, 700, 500, 900);
 $success: mat-palette($mat-green);
 $danger: mat-palette($mat-red);
+
+// Layout
+$udh-toolbar-height: 56px;
+$udh-toolbar-shadow-length: 8px;
+$udh-sidenav-height-from-top: $udh-toolbar-height + $udh-toolbar-shadow-length;
+$udh-sidenav-width: 240px;
+
+@mixin scrollbar-styling() {
+  &::-webkit-scrollbar {
+    background: transparent;
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #bdbdbd;
+  }
+}

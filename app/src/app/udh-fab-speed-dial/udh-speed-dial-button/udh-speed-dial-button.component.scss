@@ -9,26 +9,28 @@
     margin: 10px;
   }
 
-  button[md-mini-fab] {
-    font-size: 24px;
-    line-height: 40px;
+  button {
+    &[md-mini-fab] {
+      font-size: 24px;
+      line-height: 40px;
 
-    & + .speed-dial-title {
-      font-size: 18px;
-      height: 20px;
-      border-radius: 5px;
+      & + .speed-dial-title {
+        font-size: 18px;
+        height: 20px;
+        border-radius: 5px;
+      }
+      
     }
     
-  }
-  
-  button[md-fab] {
-    font-size: 30px;
-    line-height: 56px;
+    &[md-fab] {
+      font-size: 30px;
+      line-height: 56px;
 
-    & + .speed-dial-title {
-      font-size: 20px;
-      height: 28px;
-      border-radius: 7px;
+      & + .speed-dial-title {
+        font-size: 20px;
+        height: 28px;
+        border-radius: 7px;
+      }
     }
   }
 }

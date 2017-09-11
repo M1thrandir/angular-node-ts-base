@@ -17,6 +17,12 @@ import { LoggedInGuard } from "./models/logged-in.guard"
 import { UserService } from "./services"
 import { RoutinesComponent } from "./routines/routines.component";
 import { UdhFabSpeedDialModule } from "./udh-fab-speed-dial/udh-fab-speed-dial.module";
+import { MortgageLoanComponent } from "./mortgage-loan/mortgage-loan.component";
+import { RoutineItemComponent } from "./routine-item/routine-item.component";
+import { UdhInputContainerComponent } from "./udh-input-container/udh-input-container.component";
+import { UdhListContainerComponent } from "./udh-list-container/udh-list-container.component"
+import { UdhCardComponent } from "./udh-list-container/udh-card/udh-card.component" 
+import { UdhCardDetailsComponent } from "./udh-list-container/udh-card-details/udh-card-details.component" 
 
 @NgModule({
   declarations: [
@@ -25,6 +31,12 @@ import { UdhFabSpeedDialModule } from "./udh-fab-speed-dial/udh-fab-speed-dial.m
     LogoutComponent,
     PageNotFoundComponent,
     RoutinesComponent,
+    MortgageLoanComponent,
+    RoutineItemComponent,
+    UdhInputContainerComponent,
+    UdhListContainerComponent,
+    UdhCardComponent,
+    UdhCardDetailsComponent,
   ],
   imports: [
     UdhNavbarModule,

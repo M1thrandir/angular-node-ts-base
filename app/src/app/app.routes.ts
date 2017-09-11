@@ -3,6 +3,7 @@ import { Routes } from "@angular/router"
 import { LoginComponent } from "./login/login.component"
 import { LoggedInGuard } from "./models/logged-in.guard"
 import { LogoutComponent } from "./logout/logout.component"
+import { MortgageLoanComponent } from "./mortgage-loan/mortgage-loan.component"
 import { RoutinesComponent } from "./routines/routines.component"
 
 export const appRoutes: Routes = [
@@ -18,6 +19,7 @@ export const appRoutes: Routes = [
       { path: "tasks", component: LoginComponent },
     ],
   },
+  { path: "loan", component: MortgageLoanComponent },
   {
     path: "uRoutine",
     children: [

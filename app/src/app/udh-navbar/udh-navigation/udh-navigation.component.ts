@@ -1,4 +1,4 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component, HostBinding, ViewChild } from "@angular/core"
 import { MdSidenav } from "@angular/material"
 
 @Component({

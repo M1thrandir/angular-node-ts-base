@@ -1,4 +1,4 @@
-@mixin speedDialAnimations($margin, $margin-container, $margin-duration, $opacity, $opacity-duration, $opacity-delay) {
+@mixin speedDialAnimations($margin, $margin-container, $margin-duration, $opacity, $opacity-duration, $opacity-delay, $padding) {
    /deep/ {
     // .udh-fab-trigger-container {
     //   [udh-fab-trigger] {
@@ -12,9 +12,11 @@
       transition: margin $margin-duration, opacity $opacity-duration $opacity-delay;
 
       udh-fab-actions {
+        padding: $padding;
+
         button {
           margin: $margin;
-          transition: margin $margin-duration;
+          transition: margin $margin-duration, padding $margin-duration;
         }
       }
     }
@@ -29,29 +31,41 @@
   min-width: 56px;
   min-height: 56px;
 
-  @include speedDialAnimations(-20px, -32px, 300ms, 0, 10ms, 290ms);
+  @include speedDialAnimations(-20px, -32px, 300ms, 0, 10ms, 290ms, 0px);
 
   /deep/ {
     .udh-fab-trigger-container {
       z-index: 2;
 
-      button i {
-        line-height: 56px;
-        font-size: 30px;
+      button {
+        .mat-button-wrapper {
+          padding: 0;
+        }
+
+        i {
+          line-height: 56px;
+          font-size: 30px;
+        }
       }
     }
 
     .udh-fab-actions-container {
       z-index: 1;
 
-      button i {
-        line-height: 40px;
-        font-size: 24px;
+      button {
+        .mat-button-wrapper {
+          padding: 0;
+        }
+
+        i {
+          line-height: 40px;
+          font-size: 24px;
+        }
       }
     }
   }
   
   &.opened {
-    @include speedDialAnimations(5px, 5px, 300ms, 1, 290ms, 10ms);
+    @include speedDialAnimations(5px, 0px, 300ms, 1, 290ms, 10ms, 5px);
   }
 }

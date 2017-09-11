@@ -28,15 +28,25 @@ export class UdhFabSpeedDialComponent {
     this.flexDirection = getFlexDirection(direction)
     this.actions.flexDirection = this.flexDirection
   }
+
+  @Input() public openOn: "click" | "hover" = "hover"
+
+  @HostListener("mouseenter", ["$event"])
+  @HostListener("mouseleave", ["$event"])
+  public onHover(event: MouseEvent) {
+    if (this.openOn === "hover") {
+      if (event.type === "mouseenter") {
+        this.opened = true
+      } else {
+        this.opened = false
+      }
+    }
+  }
   
   @HostListener("click", ["$event"])
   public onClick(event: MouseEvent) {
-    if (this.opened) {
-      if (event.srcElement.closest("[udh-fab-trigger]") || event.srcElement.closest("udh-fab-actions")) {
-        this.opened = false
-      }
-    } else {
-      this.opened = true
-    }
+    if (this.openOn === "click" || (this.opened && this.openOn === "hover")) {
+      this.opened = !this.opened
+    }   
   }
 }

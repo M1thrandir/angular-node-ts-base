@@ -1,41 +1,113 @@
-<md-card class="header">
-  Header
+<div class="routines-container">
+  <udh-list-container>
+    <udh-card></udh-card>
+    <udh-card-details></udh-card-details>
+  </udh-list-container>
+  <udh-list-container></udh-list-container>
+  <udh-list-container></udh-list-container>
+  <udh-list-container></udh-list-container>
+  <udh-list-container></udh-list-container>
+  <udh-list-container></udh-list-container>
+  <udh-list-container></udh-list-container>
+</div>
+
+<!-- <md-card class="header">
+  Dan's Routine
 
   <div class="speed-dial-wrapper">
     <udh-fab-speed-dial direction="left">
-      <button md-fab udh-fab-trigger color="accent" mdTooltip="Add Task" mdTooltipPosition="above">
-      <i class="mdi mdi-plus"></i>
-    </button>
+      
+      <button udh-fab-trigger md-fab color="accent"
+              mdTooltip="New Routine Task" mdTooltipPosition="above"
+              (click)="onNewRoutineTask()">
+        <i class="mdi mdi-checkbox-marked-circle-outline"></i>
+      </button>
 
       <udh-fab-actions>
-        <button md-mini-fab color="primary" mdTooltip="Add Routine" mdTooltipPosition="above">
-        <i class="mdi mdi-check"></i>
-      </button>
-        <button md-mini-fab color="primary" mdTooltip="Add Routine" mdTooltipPosition="above">
-        <i class="mdi mdi-calendar"></i>
-      </button>
-        <button md-mini-fab color="primary" mdTooltip="Add Routine" mdTooltipPosition="above">
-        <i class="mdi mdi-login"></i>
-      </button>
-        <button md-mini-fab color="primary" mdTooltip="Add Routine" mdTooltipPosition="above">
-        <i class="mdi mdi-login"></i>
-      </button>
-        <button md-mini-fab color="primary" mdTooltip="Add Routine" mdTooltipPosition="above">
-        <i class="mdi mdi-login"></i>
-      </button>
-        <button md-mini-fab color="primary" mdTooltip="Add Routine" mdTooltipPosition="above">
-        <i class="mdi mdi-login"></i>
-      </button>
-        <button md-mini-fab color="primary" mdTooltip="Add Routine" mdTooltipPosition="above">
-        <i class="mdi mdi-login"></i>
-      </button>
-      </udh-fab-actions>
+        <button md-mini-fab color="primary" mdTooltip="Music" mdTooltipPosition="above">
+          <i class="mdi mdi-music-note"></i>
+        </button>
 
+        <button md-mini-fab color="primary" mdTooltip="Scriptures" mdTooltipPosition="above">
+          <i class="mdi mdi-book"></i>
+        </button>
+      </udh-fab-actions>
     </udh-fab-speed-dial>
   </div>
 </md-card>
-<div style="background-color: lightblue; padding: 5px;">
-<md-card *ngFor="let item of [1,2,3,4,5,6,7,8,9,10]" style="margin: 0 5px 5px;">
-  Routine #{{ item }}
+<md-card class="body">
+  <md-list>
+    <udh-routine-item
+        *ngFor="let task of routineTasks"
+        [udhItemTitle]="task?.title"
+        [udhItemDescription]="task?.description"
+        [udhItemIcon]="task?.icon">
+      <button md-icon-button *ngFor="let button of task?.buttons"
+              [mdTooltip]="button?.tooltipText" mdTooltipPosition="above">
+        <i [class]="button?.icon"></i>
+      </button>
+    </udh-routine-item>
+    
+    <udh-routine-item
+        udhItemTitle="Wake up Music"
+        udhItemDescription="Dan's Playlist on Plex"
+        udhItemIcon="mdi mdi-music-note">
+    </udh-routine-item>
+    
+    <md-divider></md-divider>
+
+    <udh-routine-item
+        udhItemTitle="Morning Snack"
+        udhItemIcon="mdi mdi-checkbox-marked-circle-outline">
+    </udh-routine-item>
+
+    <md-divider></md-divider>
+
+    <udh-routine-item
+        udhItemTitle="Take Medicine"
+        udhItemIcon="mdi mdi-checkbox-marked-circle-outline">
+    </udh-routine-item>
+
+    <md-divider></md-divider>
+
+    <udh-routine-item 
+        udhItemTitle="Read Scriptures"
+        udhItemDescription="Passages by Chapter - Next Chapter: 1 Nephi 5"
+        udhItemIcon="mdi mdi-book">
+    </udh-routine-item>
+    
+    <md-divider></md-divider>
+    <udh-routine-item
+        udhItemTitle="Exercise"
+        udhItemIcon="mdi mdi-checkbox-marked-circle-outline">
+      <button md-icon-button mdTooltip="Set Task for a timer" mdTooltipPosition="below">
+        <i class="mdi mdi-clock"></i>
+      </button>
+
+      <button md-icon-button mdTooltip="Play Music during task" mdTooltipPosition="below">
+        <i class="mdi mdi-music-note"></i>
+      </button>
+    </udh-routine-item>
+  </md-list>
 </md-card>
-</div>
+-->
+<!--
+  - Exercise
+    + Task with Timer
+    + Play music playlist from plex for the timer amount on a certain device
+  - Brush Teeth
+    + Task
+  - Shower
+    + Task
+  - Leave for work:
+    + Task with List and Title
+    - Don't forget to:
+      + Sub-task list with Title
+      - Send text with list
+        - Turn off lights
+        - Wallet
+        - Phone
+        - Keys
+        - Close the garage door
+      + Sub-task to confirm hands-free
+-->

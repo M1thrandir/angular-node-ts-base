@@ -1,0 +1,45 @@
+<div class="main-details">
+  <div class="left-side">
+    <i [class]="udhItemIcon"></i>
+    <div class="multi-line">
+      <udh-input-container>
+        <input udh-input placeholder="Add Title..."
+               class="udh-item-input-title" [(ngModel)]="udhItemTitle"
+               name="title" />
+      </udh-input-container>
+      <udh-input-container>
+        <input udh-input placeholder="Add Description..."
+               class="udh-item-input-description" [(ngModel)]="udhItemDescription"
+               name="description">
+      </udh-input-container>
+    </div>
+  </div>
+  <div>
+    <div class="right-side">
+      <ng-content select="button[md-icon-button]"></ng-content>
+      <button md-icon-button mdTooltip="Checklist" mdTooltipPosition="below" (click)="onButtonClick.emit($event)">
+      <i class="mdi mdi-checkbox-multiple-marked-outline"></i>
+    </button>
+
+      <button md-icon-button mdTooltip="Remove" mdTooltipPosition="below" (click)="onButtonClick.emit($event)">
+      <i class="mdi mdi-delete"></i>
+    </button>
+
+      <button md-icon-button mdTooltip="More" mdTooltipPosition="below" [mdMenuTriggerFor]="menu">
+      <i class="mdi mdi-dots-vertical"></i>
+    </button>
+      <md-menu #menu="mdMenu" (mouseenter)="onMenuHover.emit(true)" (mouseleave)="onMenuHover.emit(false)">
+        <button md-menu-item (click)="onMenuButtonClick.emit($event)">Item 1</button>
+        <button md-menu-item (click)="onMenuButtonClick.emit($event)">Item 2</button>
+      </md-menu>
+    </div>
+  </div>
+</div>
+<div class="extra-details">
+  <h4 class="sub-title">Checklist Name</h4>
+  <md-checkbox>Here is one checkbox</md-checkbox>
+  <md-checkbox>Here is one checkbox</md-checkbox>
+  <md-checkbox>Here is one checkbox</md-checkbox>
+  <md-checkbox>Here is one checkbox</md-checkbox>
+  <md-checkbox>Here is one checkbox</md-checkbox>
+</div>

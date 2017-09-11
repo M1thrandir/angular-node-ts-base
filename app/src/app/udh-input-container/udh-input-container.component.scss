@@ -1,0 +1,34 @@
+@import "../../styles/app.variables";
+
+:host {
+  .udh-input-container {
+    background-color: transparent;
+
+    /deep/ {
+      input[udh-input] {
+        border-style: none;
+        background-color: transparent;
+
+        &:focus {
+          outline: none;
+
+          + .udh-input-selection {
+            width: 100%;
+          }
+        }
+      }
+
+      .udh-input-selection {
+        display: flex;
+        justify-content: center;
+
+        background-color: transparent;
+        height: 2px;
+        margin-bottom: 5px;
+        width: 0%;
+        transition: width 300ms;
+        border-bottom: 2px solid mat-color($accent);
+      }
+    }
+  }
+}

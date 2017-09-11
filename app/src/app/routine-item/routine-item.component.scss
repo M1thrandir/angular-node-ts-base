@@ -1,0 +1,83 @@
+:host {
+  display: flex;
+  flex-direction: column;
+
+  .main-details {
+    display: flex;
+    flex-direction: row;
+    padding: 5px 0 0 5px;
+
+    > .left-side,
+    > .right-side {
+      display: flex;
+      flex-direction: row;
+      flex: 1;
+    }
+
+    > .left-side {
+      align-items: center;
+      justify-content: flex-start;
+      padding: 15px 0;
+
+      > i {
+        font-size: 24px;
+      }
+      
+      > .multi-line {
+        display: flex;
+        flex-direction: column;
+        padding-left: 20px;
+        width: 100%;
+
+        /deep/ {
+          udh-input-container {
+            .udh-item-input-title {
+              font-size: 20px;
+              font-weight: 500;
+            }
+
+            .udh-item-input-description {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+
+    > div {
+      padding-left: 20px;
+
+      > .right-side {
+        align-items: flex-start;
+        justify-content: flex-end;
+        padding: 5px 0 0;
+
+        /deep/ button {
+          .mat-button-wrapper {
+            i {
+              font-size: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .extra-details {
+    padding-left: 48px;
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    .sub-title {
+      font-weight: 400;
+      margin: 5px 0;
+    }
+
+    md-checkbox {
+      padding: 5px;
+      padding-left: 10px;
+    }
+  }
+}

@@ -1,28 +1,66 @@
 @import "../../styles/app.variables";
 
-:host {
-  display: block;
-  height: 100%;
-  width: 100%;
+:host {  
+  max-height: 100%;
+  max-width: 100%;
+  
+  @include scrollbar-styling();
 
-  .header {
-    background-color: mat-color($primary, 300);
-    color: white;
+  .routines-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 20px 0 20px 10px;
+    display: flex;
+    flex: none;
+    flex-direction: row;
 
-    .speed-dial-wrapper {
-      display: flex;
-      justify-content: flex-end;
-      align-content: flex-end;
-      bottom: -15px;
-      position: relative;
-      float: right;
-      width: 56px;
-      height: 56px;
 
-      udh-fab-speed-dial {
-        width: 56px;
-        height: 56px;
-      }
+    udh-list-container {
+      width: 480px;
+      flex: 1;
+      overflow-y: auto;
+      max-height: 100%;
+      padding: 5px 20px 5px 5px;
+      flex: none;
     }
   }
+  // .header {
+  //   background-color: mat-color($primary);
+  //   color: white;
+
+  //   .speed-dial-wrapper {
+  //     display: flex;
+  //     justify-content: flex-end;
+  //     align-content: flex-end;
+  //     bottom: -15px;
+  //     position: relative;
+  //     float: right;
+  //     width: 56px;
+  //     height: 56px;
+
+  //     udh-fab-speed-dial {
+  //       width: 56px;
+  //       height: 56px;
+  //     }
+  //   }
+  // }
+
+  // .body {
+  //   /deep/ {
+  //     .udh-input-container {
+  //       /deep/ {
+  //         input[udh-input] {
+  //           &.udh-item-input-description {
+  //             border-style: none;
+
+  //             & + .udh-input-selection {
+  //               height: 0;
+  //               border-bottom: 1px solid mat-color($accent);
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 }

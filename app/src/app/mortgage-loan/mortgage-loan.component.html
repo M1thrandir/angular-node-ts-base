@@ -1,0 +1,57 @@
+<md-card>
+  Loans
+</md-card>
+<md-card>
+  <div *ngIf="loanPayments">
+    <md-card *ngFor="let loanPayment of loanPayments">
+      
+      <div *ngIf="loanPayment">
+        <md-divider></md-divider>
+
+        <h3>Loans to Pay for Payment on {{ loanPayment.payment.dateToPay | date:"mediumDate" }}:</h3>
+        <h4>Amount Paid: {{ loanPayment.payment.amount | currency:"USD":true:"1.2-2" }}</h4>
+        <md-card *ngFor="let loan of loanPayment.loans">
+          <h4>Interest Rate: {{ loan.interestRate | percent }}</h4>
+          <h4>Principal Remaining: {{ loan.curPrincipalAmount | currency:"USD":true:"1.2-2" }}</h4>
+          <h4>Interest Remaining: {{ loan.curInterestAmount | currency:"USD":true:"1.2-2" }}</h4>
+          <h4>Date Paid: {{ loan.dateLastPaid }}</h4>
+        </md-card>
+
+        <md-divider></md-divider>
+
+        <h3>Loans After Payment</h3>
+        <md-card *ngFor="let loan of loanPayment.updatedLoans">
+          <h4>Interest Rate: {{ loan.interestRate | percent }}</h4>
+          <h4>Principal Remaining: {{ loan.curPrincipalAmount > 0
+                                          ? (loan.curPrincipalAmount | currency:"USD":true:"1.2-2")
+                                          : "PAID" }}</h4>
+          <h4>Interest Remaining: {{ loan.curInterestAmount | currency:"USD":true:"1.2-2" }}</h4>
+          <h4>Date Paid: {{ loan.dateLastPaid | date:"mediumDate"}}</h4>
+        </md-card>
+
+        <md-divider></md-divider>
+
+        <h3>Loan Amount Remaining: {{ totalAmount(loanPayment.updatedLoans) | currency:"USD":true:"1.2-2" }}</h3>
+      </div>
+    </md-card>
+  </div>  
+  <!-- <h3>Balances For Payments</h3>
+  <md-card *ngFor="let balance of balances">
+    <h4>Payment</h4>
+    <p>Date: {{ balance.paymentDate }}</p>
+    <p>Amount: {{ balance.paymentAmount }}</p>
+    
+    <md-divider></md-divider>
+    
+    <h4>Before Payment</h4>
+    <p>Balance: {{ balance.balanceBeforePayment }}</p>
+    <p>Unpaid Interest: {{ balance.unpaidInterestBefore }}</p>
+    
+    <md-divider></md-divider>
+
+    <h4>After Payment</h4>
+    <p>Principal Paid: {{ balance.principalPaid }}</p>
+    <p>Unpaid Interest Remaining: {{ balance.unpaidInterestAfter }}</p>
+    <p>Balance: {{ balance.balanceAfterPayment }}</p>
+  </md-card> -->
+</md-card>

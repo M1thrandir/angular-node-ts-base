@@ -2,7 +2,7 @@
   width: 100%;
 
   /deep/ {
-    > .mat-sidenav {
+    > .mat-drawer {
       box-shadow: none !important;
       background-color: transparent;
       width: 100%;
@@ -23,7 +23,7 @@
       }
     }
 
-    .mat-sidenav-backdrop {
+    .mat-drawer-backdrop {
       display: none;
     }
   }
