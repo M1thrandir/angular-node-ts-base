@@ -26,6 +26,11 @@
       opacity: 1;
       transition: height 300ms 300ms, width 300ms, opacity 250ms 50ms;
       
+      .header {
+        border-left-width: 8px;
+        transition: border-left-width 300ms;
+      }
+      
       /deep/ udh-card-details > .body {
         height: 100%;
         transition: height 300ms 300ms;
@@ -42,9 +47,24 @@
     opacity: 0;
     transition: width 300ms 300ms, opacity 100ms calc(200ms + 300ms);
     
-    /deep/ udh-card-details > .body {
-      height: 0%;
-      transition: height 300ms;
+    /deep/ {
+      udh-card-details {
+        > .header,
+        > .body {
+          border-left-color: mat-color($primary);
+          border-left-style: solid;
+          border-left-width: 8px;
+        }
+
+        > .header {
+          transition: border-left-width 300ms 300ms;
+        }
+
+        > .body {
+          height: 0%;
+          transition: height 300ms;
+        }
+      }
     }
   }
 

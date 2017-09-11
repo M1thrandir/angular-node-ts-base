@@ -42,7 +42,9 @@
       .body-container {
         display: flex;
         flex: 1 1 auto;
-        margin: 0;
+        margin-left: $udh-sidenav-width;
+        padding-left: 10px;
+        transition: margin-left 225ms, padding-left 225ms;
 
         /deep/ {
           > :not(router-outlet) {
@@ -70,6 +72,11 @@
         .sidenav-container {
           transform: translateX(-100%);
         }
+      }
+
+      .body-container {
+        margin-left: 0;
+        padding-left: 0;
       }
     }
   }
